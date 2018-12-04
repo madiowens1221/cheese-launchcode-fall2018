@@ -32,8 +32,8 @@ public class CategoryController {
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String displayAddCategory(Model model) {
 
-        model.addAttribute("title", "Add Category");
         model.addAttribute(new Category());
+        model.addAttribute("title", "Add Category");
 
         return "category/add";
     }
@@ -44,7 +44,7 @@ public class CategoryController {
                                      Errors errors) {
 
         if (errors.hasErrors()) {
-            model.addAttribute("title", "Add Category");
+            model.addAttribute("errors", errors);
             return "category/add";
         } else {
 
