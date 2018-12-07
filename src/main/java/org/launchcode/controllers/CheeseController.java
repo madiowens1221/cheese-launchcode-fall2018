@@ -19,6 +19,10 @@ import javax.validation.Valid;
 @RequestMapping("cheese")
 public class CheeseController {
 
+    //field
+    //you aren't implementing the cheeseDao interface,
+    //so spring sees the crud repository and makes one for you
+    //autowired - should be given an instance of this class by the framework
     @Autowired
     private CheeseDao cheeseDao;
 
